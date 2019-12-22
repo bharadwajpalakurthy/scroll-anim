@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Test Scroll</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Basic&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="navlinks">
+      <ul>
+        <li class="nav-dots" data-link="a"></li>
+        <li class="nav-dots" data-link="b"></li>
+        <li class="nav-dots" data-link="c"></li>
+        <li class="nav-dots" data-link="d"></li>
+        <li class="nav-dots" data-link="e"></li>
+    </ul>
+    </div>
+    <div class="content" id="a"><p>One</p></div>
+    <div class="content" id="b"><p>two</p></div>
+    <div class="content" id="c"><p>three</p></div>
+    <div class="content" id="d"><p>four</p></div>
+    <div class="content" id="e"><p>five</p></div>
+
+    <script>
+    const navlinks = document.querySelectorAll(".nav-dots");
+
+    navlinks.forEach(e=>e.addEventListener('click',()=>{
+        document.querySelector("#" + e.dataset.link).scrollIntoView();
+    }))
+    
+    </script>
+  </body>
+</html>
